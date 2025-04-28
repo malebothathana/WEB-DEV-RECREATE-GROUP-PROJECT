@@ -1,0 +1,795 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>⭐ Portfolio</title>
+  <style>
+    body {
+      font-family: "Trebuchet MS", sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      background: url('https://images.pexels.com/photos/26049969/pexels-photo-26049969/free-photo-of-office-equipment-from-above.jpeg') no-repeat center center/cover;
+      background-attachment: fixed;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: rgba(0, 0, 0, 0);
+    }
+
+    .logo {
+      font-size: 28px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a.pages::after {
+      content: "▾";
+      font-size: 12px;
+      margin-left: 5px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-left: 20px;
+    }
+
+    .icons span {
+      font-size: 20px;
+      cursor: pointer;
+      filter: grayscale(100%) brightness(200%);
+    }
+
+    .hire-me-header-btn {
+      background-color: rgba(0, 184, 148, 0.2);
+      color: #fff;
+      border: 1px solid #00b894;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      padding: 50px;
+      height: calc(100vh - 100px);
+      background: transparent;
+    }
+
+    .hero-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-left h2 {
+      font-size: 32px;
+      margin: 0 0 10px 0;
+    }
+
+    .hero-left h1 {
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: 100px;
+      font-weight: bold;
+      letter-spacing: 5px;
+      color: transparent;
+      -webkit-text-stroke: 2px #fff;
+      margin: 0 0 20px 0;
+    }
+
+    .hero-left p {
+      font-size: 18px;
+      max-width: 500px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .btn-primary {
+      background-color: rgba(0, 184, 148, 0.2);
+      color: #fff;
+      border: 1px solid #00b894;
+    }
+
+    .btn-secondary {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      border: 1px solid #fff;
+    }
+
+    .hero-right {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-right img {
+      width: 67.6%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    /* Biography Section */
+    .bio {
+      background-color: #fff;
+      color: #333;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 80px 50px;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .bio-left {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end; 
+    }
+
+    .bio-left img {
+      width: 60%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .bio-right {
+      flex: 1;
+    }
+
+    .bio-right h4 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      font-weight: normal;
+      color: #363636;
+    }
+
+    .bio-right h2 {
+      font-size: 38px;
+      color: #000;
+      margin-bottom: 22px;
+    }
+
+    .bio-right p {
+      font-size: 22px;
+      color: #555;
+      margin-bottom: 35px;
+      max-width: 600px;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    .info-table td {
+      padding: 10px 0;
+      vertical-align: top;
+    }
+
+    .info-table .label {
+      font-weight: bold;
+      padding-right: 10px;
+      color: #000;
+    }
+
+    .info-table .value {
+      color: #555;
+    }
+
+    .follow-me {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .follow-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .follow-me-text {
+      font-size: 22px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      font-size: 28px;
+      color: #00796b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .social-icons svg {
+      width: 24px;
+      height: 24px;
+      fill:  #00796b;
+    }
+
+    /* NEW BUTTON STYLES */
+    .hire-me-bio-btn {
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 16px;
+      background-color: rgba(0, 184, 148, 0.2);
+      color: #00b894;
+      border: 2px solid #00b894;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .hire-me-bio-btn:hover {
+      background-color: #00b894;
+      color: white;
+    }
+
+    .download-cv-btn {
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 16px;
+      background-color: rgba(75, 238, 10, 0.2);
+      color: #00ff6a;
+      border: 2px solid #2deb26b4;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .download-cv-btn:hover {
+      background-color: #0080ff;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">⭐ UI Portfolio</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#" class="pages">Pages</a> 
+    <a href="#">Contacts</a>
+    <a href="#" class="hire-me-header-btn">Hire Me</a>
+    <div class="icons">
+      <span>🔍</span>
+      <span>🌙</span>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-left">
+    <h2>Hi, I'm John Watson</h2>
+    <h1>Web developer</h1>
+    <p>I love graphic design and photography and have been working on my portfolio since 2016. I can give your business a new creative start right away.</p>
+    <div class="buttons">
+      <a href="#" class="btn-primary">Hire Me</a>
+      <a href="#" class="btn-secondary">My Portfolio</a>
+    </div>
+  </div>
+  
+  <div class="hero-right">
+    <img src="https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/banner.png" alt="John Watson" class="hero-img">
+  </div>
+</section>
+
+<section class="bio">
+  <div class="bio-left">
+    <img src="https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/about.jpg" alt="About Me Image">
+  </div>
+  <div class="bio-right">
+    <h4>My Biography</h4>
+    <h2>A Lead UI Designer & Web Developer based in UK</h2>
+    <p>I love Graphic design and Photography and have been working on my portfolio since 2016. I can give your business a new Creative start right away! Contact me and we will discuss your projects!</p>
+
+    <table class="info-table">
+      <tr>
+        <td class="label">Name:</td>
+        <td class="value">John Watson</td>
+        <td class="label">Place:</td>
+        <td class="value">London, UK</td>
+      </tr>
+      <tr>
+        <td class="label">Email:</td>
+        <td class="value">example@mail.com</td>
+        <td class="label">Phone:</td>
+        <td class="value">+44 1234 5678</td>
+      </tr>
+    </table>
+
+    <div class="follow-me">
+      <div class="follow-row">
+        <div class="follow-me-text">Follow Me On:</div>
+        <div class="social-icons">
+          <a href="#">Bé</a>
+          <a href="#">in</a>
+          <a href="#">f</a>
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M22.46 6c-.77.35-1.6.59-2.46.69a4.3 4.3 0 001.88-2.37 8.48 8.48 0 01-2.71 1.04 4.27 4.27 0 00-7.26 3.89A12.1 12.1 0 013 4.79a4.27 4.27 0 001.32 5.7 4.23 4.23 0 01-1.93-.53v.05a4.28 4.28 0 003.43 4.19 4.3 4.3 0 01-1.93.07 4.28 4.28 0 003.99 2.97A8.57 8.57 0 013 19.54 12.07 12.07 0 009.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.35-.02-.53A8.34 8.34 0 0024 5.55a8.26 8.26 0 01-2.36.65 4.26 4.26 0 001.86-2.35z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="bio-buttons">
+        <a href="#" class="hire-me-bio-btn">Hire Me</a>
+        <a href="#" class="download-cv-btn">Download CV</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Stage 3: What I Do For You Section -->
+<section class="services">
+  <h2 class="services-title">What I Do For You</h2>
+  <div class="services-container">
+    <div class="service-card">
+      <div class="icon">
+        <!-- Laptop Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#00796b" viewBox="0 0 24 24" width="60" height="60">
+          <path d="M3 4h18v12H3z" fill="#00796b"/>
+          <path d="M0 18h24v2H0z" fill="#00796b"/>
+        </svg>
+      </div>
+      <h3>Web Development</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque laudan.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">
+        <!-- App Store Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="60" height="60">
+          <circle cx="50" cy="50" r="45" stroke="#00796b" stroke-width="6" fill="white" />
+          <path d="M30,70 L70,30 M40,30 L50,50 L60,70 M35,65 L65,65" stroke="#00796b" stroke-width="6" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3>App Development</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque laudan.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">
+        <!-- Camera Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#00796b" viewBox="0 0 24 24" width="60" height="60">
+          <path d="M12 8a4 4 0 100 8 4 4 0 000-8zm10-2h-4.586l-2-2H8.586l-2 2H2v14h20V6zM12 16a4 4 0 110-8 4 4 0 010 8z"/>
+        </svg>
+      </div>
+      <h3>Photography</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque laudan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Stage 3 Styles -->
+
+<style>
+  .services {
+    background-color: #f9f6f2;
+    padding: 80px 50px;
+    text-align: center;
+  }
+  
+  .services-title {
+    font-size: 48px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  .services-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .service-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    flex: 1;
+    min-width: 250px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.877);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+  
+  .service-card .icon {
+    margin-bottom: 25px;
+  }
+  
+  .service-card h3 {
+    font-size: 26px;
+    color: #00796b;
+    margin-bottom: 20px;
+    transition: color 0.3s ease, filter 0.3s ease;
+  }
+  
+  .service-card p {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
+  }
+  
+  
+  .service-card:hover h3 {
+    color: #f9f6f2; 
+    filter: blur(2px); 
+  }
+  </style>
+  
+
+  <section style="background: #fff; padding: 80px 0;">
+    <div style="display: flex; align-items: center; justify-content: center; max-width: 1200px; margin: auto; gap: 50px; flex-wrap: wrap;">
+  
+      <!-- Left side - Image -->
+      <div style="flex: 1; min-width: 400px; height: 650px; background: url('https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/about1.jpg') no-repeat center/cover; border-radius: 9px;">
+      </div>
+  
+      <!-- Right side - Skills -->
+      <div style="flex: 1; min-width: 300px;">
+        <h2 style="font-size: 20px; color:  #8f8c8c; margin-bottom: 10px;">My skills</h2>
+        <h3 style="font-size: 50px; color: #615e5e; margin-bottom: 20px;">My Featured skills</h3>
+        <p style="font-size: 20px; color:  #8f8c8c; margin-bottom: 40px; line-height: 1.6;">
+          I Specialize in Branding and Strategy, and am passionate about creating Awesome Portfolio work.
+          And I always ready to impress the audience with my Creativity.
+        </p>
+  
+        <!-- Skill 1 -->
+        <div style="margin-bottom: 30px;">
+          <div style="font-size: 20px; color: #8f8c8c; margin-bottom: 10px;">UI/UX Design</div>
+          <div style="background: #eee; border-radius: 20px; overflow: hidden;">
+            <div style="height: 5px; width: 80%; background: #00796b; border-radius: 20px 0 0 20px;"></div>
+          </div>
+        </div>
+  
+        <!-- Skill 2 -->
+        <div style="margin-bottom: 30px;">
+          <div style="font-size: 20px; color: #8f8c8c; margin-bottom: 10px;">Ideas & Technology</div>
+          <div style="background: #eee; border-radius: 20px; overflow: hidden;">
+            <div style="height: 5px; width: 60%; background: #00796b; border-radius: 20px 0 0 20px;"></div>
+          </div>
+        </div>
+  
+        <!-- Skill 3 -->
+        <div style="margin-bottom: 30px;">
+          <div style="font-size: 20px; color: #8f8c8c; margin-bottom: 10px;">Branding Design</div>
+          <div style="background: #eee; border-radius: 20px; overflow: hidden;">
+            <div style="height: 5px; width: 90%; background: #00796b; border-radius: 20px 0 0 20px;"></div>
+          </div>
+        </div>
+  
+        <!-- Skill 4 -->
+        <div style="margin-bottom: 30px;">
+          <div style="font-size: 20px; color: #8f8c8c; margin-bottom: 10px;">Responsive Web Design</div>
+          <div style="background: #eee; border-radius: 20px; overflow: hidden;">
+            <div style="height: 5px; width: 65%; background: #00796b; border-radius: 20px 0 0 20px;"></div>
+          </div>
+        </div>
+  
+      </div>
+  
+    </div>
+  </section>
+  
+
+  <section style="background: url('https://images.pexels.com/photos/8572606/pexels-photo-8572606.jpeg') no-repeat center/cover; padding: 80px 0;">
+    <div style="display: flex; align-items: center; justify-content: center; max-width: 1200px; margin: auto; gap: 50px; flex-wrap: wrap;">
+  
+      <!-- Left side - Features -->
+      <div style="flex: 1; min-width: 300px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+        
+        <!-- Feature 1 -->
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <svg width="50" height="50" fill="#00796b" viewBox="0 0 24 24"><path d="M5 3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5v2H7v2h10v-2h-3v-2h5a2 2 0 0 0 2-2V7l-6-4H5zm7 14a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>
+          <div>
+            <h4 style="font-size: 25px; margin: 0 0 8px; color: #444;">Web Development</h4>
+            <p style="margin: 0; color: #666;">Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+          </div>
+        </div>
+  
+        <!-- Feature 2 -->
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <svg width="50" height="50" fill="#00796b" viewBox="0 0 24 24"><path d="M4 4h16v2H4zm0 5h10v2H4zm0 5h16v2H4zm0 5h10v2H4z"/></svg>
+          <div>
+            <h4 style="font-size: 25px; margin: 0 0 8px; color: #444;">Design Trends</h4>
+            <p style="margin: 0; color: #666;">Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+          </div>
+        </div>
+  
+        <!-- Feature 3 -->
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <svg width="50" height="50" fill="#00796b" viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm4 0h2v-2H7v2zm4 0h10v-2H11v2zm0 4h10v-2H11v2zM3 17h2v-2H3v2zm4 0h2v-2H7v2z"/></svg>
+          <div>
+            <h4 style="font-size: 25px; margin: 0 0 8px; color: #444;">Research & Analysis</h4>
+            <p style="margin: 0; color: #666;">Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+          </div>
+        </div>
+  
+        <!-- Feature 4 -->
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <svg width="50" height="50" fill="#00796b" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM7 11h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg>
+          <div>
+            <h4 style="font-size: 25px; margin: 0 0 8px; color: #444;">Customer Support</h4>
+            <p style="margin: 0; color: #666;">Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+          </div>
+        </div>
+  
+        <!-- Feature 5 -->
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <svg width="50" height="50" fill="#00796b" viewBox="0 0 24 24"><path d="M4 6h16v12H4z" opacity=".3"/><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12z"/></svg>
+          <div>
+            <h4 style="font-size: 25px; margin: 0 0 8px; color: #444;">Responsive Design</h4>
+            <p style="margin: 0; color: #666;">Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+          </div>
+        </div>
+  
+        <!-- Feature 6 -->
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <svg width="50" height="50" fill="#00796b" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+          <div>
+            <h4 style="font-size: 25px; margin: 0 0 8px; color: #444;">PSD Design</h4>
+            <p style="margin: 0; color: #666;">Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+          </div>
+        </div>
+  
+      </div>
+  
+      <!-- Right side - Image -->
+      <div style="flex: 1; min-width: 300px; height: 600px; background: url('https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/about.jpg') no-repeat center/cover; border-radius: 8px;">
+      </div>
+  
+    </div>
+  </section>
+  
+  
+  
+  <section style="background: #f9f9f9; padding: 80px 0;">
+    <div style="display: flex; justify-content: center; align-items: center; gap: 80px; flex-wrap: wrap; max-width: 1200px; margin: auto;">
+      
+      <!-- Counter 1 -->
+      <div style="text-align: center;">
+        <h2 style="font-size: 48px; margin: 0; color: #00796b; animation: fadeInUp 1s ease forwards;">1500</h2>
+        <p style="margin-top: 10px; font-size: 18px; color: #555;">Finished Projects</p>
+      </div>
+  
+      <!-- Counter 2 -->
+      <div style="text-align: center;">
+        <h2 style="font-size: 48px; margin: 0; color: #00796b; animation: fadeInUp 1.2s ease forwards;">2500</h2>
+        <p style="margin-top: 10px; font-size: 18px; color: #555;">Working Hours</p>
+      </div>
+  
+      <!-- Counter 3 -->
+      <div style="text-align: center;">
+        <h2 style="font-size: 48px; margin: 0; color: #00796b; animation: fadeInUp 1.4s ease forwards;">1280</h2>
+        <p style="margin-top: 10px; font-size: 18px; color: #555;">Online Support</p>
+      </div>
+  
+      <!-- Counter 4 -->
+      <div style="text-align: center;">
+        <h2 style="font-size: 48px; margin: 0; color: #00796b; animation: fadeInUp 1.6s ease forwards;">3020</h2>
+        <p style="margin-top: 10px; font-size: 18px; color: #555;">Happy Customers</p>
+      </div>
+  
+    </div>
+  
+    <style>
+      @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  </section>
+   
+
+
+
+  <section style="background: #e7e5e5; padding: 80px 60px; text-align: center;">
+    <h1 style="font-size: 48px; color: #333; margin-bottom: 50px;">My Success Work</h1>
+  
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto;">
+  
+      <!-- Card 1 -->
+      <div style="position: relative; overflow: hidden; border-radius: 10px; height: 300px; background: url('https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/blog1.jpg') center/cover no-repeat; cursor: pointer;">
+        <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; transition: background 0.4s;">
+          <h2 style="margin: 0; font-size: 24px;">Architecture</h2>
+          <p style="margin-top: 10px;">This is a short description</p>
+        </div>
+      </div>
+  
+      <!-- Card 2 -->
+      <div style="position: relative; overflow: hidden; border-radius: 10px; height: 300px; background: url('https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/blog2.jpg') center/cover no-repeat; cursor: pointer;">
+        <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; transition: background 0.4s;">
+          <h2 style="margin: 0; font-size: 24px;">Corporate</h2>
+          <p style="margin-top: 10px;">This is a short description</p>
+        </div>
+      </div>
+  
+      <!-- Card 3 -->
+      <div style="position: relative; overflow: hidden; border-radius: 10px; height: 300px; background: url('https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/blog3.jpg') center/cover no-repeat; cursor: pointer;">
+        <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; transition: background 0.4s;">
+          <h2 style="margin: 0; font-size: 24px;">Ecommerce</h2>
+          <p style="margin-top: 10px;">This is a short description</p>
+        </div>
+      </div>
+  
+      <!-- Card 4 -->
+      <div style="position: relative; overflow: hidden; border-radius: 10px; height: 300px; background: url('https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/blog4.jpg') center/cover no-repeat; cursor: pointer;">
+        <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; transition: background 0.4s;">
+          <h2 style="margin: 0; font-size: 24px;">Mobile UI</h2>
+          <p style="margin-top: 10px;">This is a short description</p>
+        </div>
+      </div>
+  
+      <!-- Card 5 -->
+      <div style="position: relative; overflow: hidden; border-radius: 10px; height: 300px; background: url('https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/blog5.jpg') center/cover no-repeat; cursor: pointer;">
+        <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; transition: background 0.4s;">
+          <h2 style="margin: 0; font-size: 24px;">Fashion</h2>
+          <p style="margin-top: 10px;">This is a short description</p>
+        </div>
+      </div>
+  
+      <!-- Card 6 -->
+      <div style="position: relative; overflow: hidden; border-radius: 10px; height: 300px; background: url('https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/blog6.jpg') center/cover no-repeat; cursor: pointer;">
+        <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; transition: background 0.4s;">
+          <h2 style="margin: 0; font-size: 24px;">Real Estate</h2>
+          <p style="margin-top: 10px;">This is a short description</p>
+        </div>
+      </div>
+  
+    </div>
+  
+    <style>
+      section div div:hover > div {
+        background: rgb(0, 0, 0);
+      }
+    </style>
+  </section>
+  
+  
+  
+  <section style="background: #004d4d; padding: 50px 0; overflow: hidden;">
+    <div style="max-width: 1200px; margin: auto; overflow: hidden; position: relative;">
+      <div class="slider-track" style="display: flex; width: calc(200px * 6 + 50px * 5); animation: scroll 2s linear infinite;">
+        <img src="https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/logo1.png" style="width: 200px; margin-right: 50px; flex-shrink: 0; border-radius: 8px;">
+        <img src="https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/logo3.png" style="width: 200px; margin-right: 50px; flex-shrink: 0; border-radius: 8px;">
+        <img src="https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/logo2.png" style="width: 200px; margin-right: 50px; flex-shrink: 0; border-radius: 8px;">
+        <img src="https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/logo4.png" style="width: 200px; margin-right: 50px; flex-shrink: 0; border-radius: 8px;">
+        <img src="https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/logo5.png" style="width: 200px; margin-right: 50px; flex-shrink: 0; border-radius: 8px;">
+        <!-- duplicate first one for smooth loop -->
+        <img src="https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/logo2.png" style="width: 200px; margin-right: 50px; flex-shrink: 0; border-radius: 8px;">
+      </div>
+    </div>
+  
+    <style>
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(calc(-250px)); /* 200px img + 50px margin */
+        }
+      }
+    </style>
+  </section>
+  
+  
+  
+
+  <section style="background: hsl(170, 51%, 9%); padding: 60px 40px; color: #fff; font-family: Arial, sans-serif;">
+    <!-- Title -->
+    <h1 style="text-align: center; font-size: 36px; margin-bottom: 30px;">⭐ UI Portfolio</h1>
+  
+    <!-- Contact Info Row -->
+    <div style="display: flex; justify-content: center; align-items: center; gap: 30px; margin-bottom: 50px; flex-wrap: wrap;">
+      
+      <!-- Phone -->
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <svg width="24" height="24" fill="#00796b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 4.18 2 2 0 0 1 5 2h3a2 2 0 0 1 2 1.72 12.06 12.06 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9 9a16 16 0 0 0 6 6l1.36-1.36a2 2 0 0 1 2.11-.45 12.06 12.06 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>+12 345 678 900</span>
+      </div>
+  
+      <!-- Email -->
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <svg width="24" height="24" fill="#00796b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16z"/></svg>
+        <span>info@example.com</span>
+      </div>
+  
+      <!-- Location -->
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <svg width="24" height="24" fill="#00796b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg>
+        <span>208 Avenue street, UK - 62617.</span>
+      </div>
+  
+    </div>
+  
+    <!-- Bottom Bar -->
+    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #2c3e50; padding-top: 20px; flex-wrap: wrap;">
+  
+      <!-- Left Side -->
+      <div style="font-size: 14px;">
+        © 2025 UI Portfolio. All Rights Reserved | WordPress Theme by 
+        <span style="color: #00796b;">W3layouts.</span>
+      </div>
+  
+      <!-- Right Side -->
+      <div style="display: flex; gap: 15px; margin-top: 10px;">
+        <!-- Facebook -->
+        <svg width="24" height="24" fill="#00796b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5v-2.2c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4H15c-1.2 0-1.6.7-1.6 1.5v1.9H18l-.5 2.9h-2.1v7A10 10 0 0 0 22 12z"/></svg>
+        <!-- Twitter -->
+        <svg width="24" height="24" fill="#00796b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.4 1s-1.64 1-3.2 1.36A4.48 4.48 0 0 0 16 1c-2.5 0-4.5 2-4.5 4.5 0 .35.04.7.12 1.03A12.9 12.9 0 0 1 3 2.1a4.5 4.5 0 0 0-.6 2.26c0 1.56.8 2.92 2 3.73a4.47 4.47 0 0 1-2-.55v.05c0 2.2 1.5 4 3.6 4.4a4.5 4.5 0 0 1-2 .08c.6 1.9 2.3 3.3 4.4 3.4A9 9 0 0 1 2 19.5c-1.3 0-2.5-.1-3.5-.3A12.7 12.7 0 0 0 7 21c8.4 0 13-7 13-13 0-.2 0-.4 0-.6A9.2 9.2 0 0 0 23 3z"/></svg>
+        <!-- Google -->
+        <svg width="24" height="24" fill="#00796b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.35 11.1H12v2.8h5.5a4.7 4.7 0 0 1-2 3.2v2.7h3.2c1.9-1.7 3-4.2 3-7 0-.7-.1-1.4-.2-2.1z"/><path d="M12 22c2.7 0 5-1 6.7-2.7l-3.2-2.7c-.8.5-1.9.9-3.5.9a6.2 6.2 0 0 1-5.8-4.3H3.7v2.8A10 10 0 0 0 12 22z"/><path d="M6.2 13.2a6.1 6.1 0 0 1 0-4l-2.8-2.1A10 10 0 0 0 2 12c0 1.6.4 3.1 1.1 4.4l3.1-2.2z"/><path d="M12 5.6c1.5 0 2.8.5 3.9 1.6l2.9-2.9A9.7 9.7 0 0 0 12 2 10 10 0 0 0 3.7 7.2l3.1 2.2A6.1 6.1 0 0 1 12 5.6z"/></svg>
+        <!-- Pinterest -->
+        <svg width="24" height="24" fill="#00796b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 21c-.3-2 .4-4.5 1.2-6.3-.2-.5-.3-1.2-.3-1.8 0-2 1.2-3.5 2.7-3.5 1.3 0 2 1 2 2.3 0 1.3-.8 3.2-1.2 5-.2.7.4 1.3 1 1.3 1.3 0 2.5-1.3 2.5-3.2 0-2.7-1.9-4.6-4.7-4.6-3.2 0-5.1 2.4-5.1 5 0 1 .4 2.1 1 2.7v.1c-.1.3-.3 1.1-.3 1.2-.1.2-.2.2-.5.1-1.5-.7-2.4-2.8-2.4-4.6C4 8.9 7 5 12.4 5 17.2 5 20 8.4 20 12.4c0 3.7-2.3 6.6-5.5 6.6-1.1 0-2.2-.6-2.6-1.3 0 0-.6 2.2-.7 2.6-.2.8-.7 1.8-1 2.4-.3.6-.9.8-1.3.3-.6-.7-1.3-2-1.3-3.7z"/></svg>
+        <!-- W3layouts -->
+        <svg width="24" height="24" fill="#00796b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path fill="#fff" d="M8 16h2l1-4 1 4h2l2-8h-2l-1 4-1-4h-2l-1 4-1-4H6l2 8z"/></svg>
+      </div>
+  
+    </div>
+  </section>
+  
+
+
+
+
+</body>
+</html>
